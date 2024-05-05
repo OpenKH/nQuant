@@ -1,11 +1,22 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net6.0;net6.0-windows</TargetFrameworks>
+
+    <PackageId>nQuant</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>OpenKH developers, Matt Wrock</Authors>
+    <!-- https://spdx.org/licenses/ -->
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/OpenKH/nQuant</PackageProjectUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Description>nQuant is a .net color quantizer that can dramatically reduce the size of images with little to no perceptible quality loss.</Description>
+    <summary>nQuant is a .net color quantizer which produces high quality 256 color 8 bit PNG images. nQuant uses an algorithm adapted from Xiaolin Wu's fast optimal color quantizer. nQuant often reduces the size of a 32 bit image to a size 3 times smaller than its original with quality surpassing what the standard C command line utilities produce.</summary>
+    <PackageTags>PNG Image Optimization Quantization</PackageTags>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="System.Drawing.Common" Version="5.0.3" />
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' or '$(TargetFramework)' == 'net6.0-windows' ">
+    <PackageReference Include="System.Drawing.Common" Version="8.0.4" />
   </ItemGroup>
 
 </Project>

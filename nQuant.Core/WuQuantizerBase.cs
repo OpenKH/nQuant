@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if WINDOWS || NETSTANDARD2_0_OR_GREATER // Please note that the System.Drawing.Common library is designed to be used exclusively in a Windows environment.
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -381,3 +382,4 @@ namespace nQuant
         internal abstract Image GetQuantizedImage(ImageBuffer image, int colorCount, int maxColors, Pixel[] lookups, int alphaThreshold);
     }
 }
+#endif

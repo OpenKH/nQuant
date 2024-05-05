@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿#if WINDOWS || NETSTANDARD2_0_OR_GREATER // Please note that the System.Drawing.Common library is designed to be used exclusively in a Windows environment.
+using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 
@@ -70,3 +71,4 @@ namespace nQuant
         }
     }
 }
+#endif

@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net6.0;net6.0-windows</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net8.0;net8.0-windows</TargetFrameworks>
 
-    <PackageId>nQuant</PackageId>
+    <PackageId>nQuant.Core</PackageId>
     <Version>0.1.0</Version>
     <Authors>OpenKH developers, Matt Wrock</Authors>
     <!-- https://spdx.org/licenses/ -->
@@ -15,7 +15,7 @@
     <PackageTags>PNG Image Optimization Quantization</PackageTags>
   </PropertyGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' or '$(TargetFramework)' == 'net6.0-windows' ">
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' or '$(TargetFramework)' == 'net8.0-windows' ">
     <PackageReference Include="System.Drawing.Common" Version="8.0.4" />
   </ItemGroup>
 
